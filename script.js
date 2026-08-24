@@ -7,6 +7,9 @@ const trainingAreas = [
     "Maritime Innovation"
 ];
 
+// Google Apps Script Web App URL
+const googleSheetURL = "https://script.google.com/macros/s/AKfycbx_1HbeulgL0hV7Gxvf9MmS1mfJyYzxJGKUeHS2PMLiRMKR3W6-J9EARuU8Xz6gQGAr/exec";
+
 // Get the registration form
 const registrationForm = document.getElementById("registrationForm");
 
@@ -30,32 +33,59 @@ registrationForm.addEventListener("submit", function(event) {
         registrationMessage.textContent =
             "Please complete all the registration fields.";
 
-    } else {
+        return;
+    }
 
-        // Check whether the selected area exists
-        let validArea = false;
+    // Check whether the selected area exists
+    let validArea = false;
 
-        for (let i = 0; i < trainingAreas.length; i++) {
+    for (let i = 0; i < trainingAreas.length; i++) {
 
-            if (area === trainingAreas[i]) {
-                validArea = true;
-                break;
-            }
-        }
-
-        if (validArea) {
-
-            registrationMessage.textContent =
-                "Thank you, " + name +
-                "! Your registration for " + area +
-                " has been received.";
-
-            registrationForm.reset();
-
-        } else {
-
-            registrationMessage.textContent =
-                "Please select a valid training area.";
+        if (area === trainingAreas[i]) {
+            validArea = true;
+            break;
         }
     }
+
+    if (!validArea) {
+
+        registrationMessage.textContent =
+            "Please select a valid training area.";
+
+        return;
+    }
+
+    // Prepare registration information
+    const registrationData = {
+        name: name,
+        email: email,
+        area: area
+    };
+
+    // Send registration to Google Sheets
+    fetch(googleSheetURL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(registrationData)
+    })
+    .then(function() {
+
+        registrationMessage.textContent =
+            "Thank you, " + name +
+            "! Your registration for " + area +
+            " has been received.";
+
+        registrationForm.reset();
+
+    })
+    .catch(function() {
+
+        registrationMessage.textContent =
+            "Your registration could not be submitted. Please try again.";
+
+    });
+
 });
