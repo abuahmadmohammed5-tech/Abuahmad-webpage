@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<!-- saved from url=(0031)http://127.0.0.1:5500/#projects -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coast Youth Enterprise, Leadership & Maritime Innovation Hub</title>
+    <title>Coast Youth Enterprise, Leadership &amp; Maritime Innovation Hub</title>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./Coast Youth Enterprise, Leadership &amp; Maritime Innovation Hub_files/styles.css">
 </head>
 
 <body>
@@ -16,12 +16,12 @@
             <h2>Coast Youth Hub</h2>
 
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#training">Training</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#registration">Registration</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="http://127.0.0.1:5500/#home">Home</a></li>
+                <li><a href="http://127.0.0.1:5500/#about">About</a></li>
+                <li><a href="http://127.0.0.1:5500/#training">Training</a></li>
+                <li><a href="http://127.0.0.1:5500/#projects">Projects</a></li>
+                <li><a href="http://127.0.0.1:5500/#registration">Registration</a></li>
+                <li><a href="http://127.0.0.1:5500/#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -29,7 +29,7 @@
     <!-- Home Section -->
     <section id="home">
         <div class="hero-image">
-    <img src="images/home.jpg.jpg" alt="Coastal youth and maritime innovation">
+    <img src="./Coast Youth Enterprise, Leadership &amp; Maritime Innovation Hub_files/home.jpg.jpg" alt="Coastal youth and maritime innovation">
 </div>
 
     <div class="hero-content">
@@ -37,7 +37,7 @@
         <p class="welcome-text">WELCOME TO THE COAST</p>
 
         <h1>
-            Coast Youth Enterprise, Leadership &
+            Coast Youth Enterprise, Leadership &amp;
             Maritime Innovation Hub
         </h1>
 
@@ -47,7 +47,7 @@
             and maritime innovation.
         </p>
 
-        <a href="#registration" class="hero-button">
+        <a href="http://127.0.0.1:5500/#registration" class="hero-button">
             Join the Hub
         </a>
 
@@ -84,7 +84,7 @@
         <h2>Empowering Coastal Youth</h2>
 
         <p>
-            The Coast Youth Enterprise, Leadership & Maritime Innovation Hub
+            The Coast Youth Enterprise, Leadership &amp; Maritime Innovation Hub
             is a youth-focused platform designed to bring learning,
             entrepreneurship and innovation opportunities closer to young
             people in coastal communities.
@@ -140,7 +140,7 @@
     <!-- Training Section -->
     <section id="training">
    <div class="training-image">
-    <img src="images/training.jpg" alt="Young people participating in training and leadership activities">
+    <img src="./Coast Youth Enterprise, Leadership &amp; Maritime Innovation Hub_files/training.jpg" alt="Young people participating in training and leadership activities">
 </div>     
 
     <p class="section-label">WHAT WE OFFER</p>
@@ -207,7 +207,7 @@
     <!-- Projects Section -->
     <section id="projects">
       <div class="projects-image">
-    <img src="images/projects.jpg" alt="Young people working together on community projects">
+    <img src="./Coast Youth Enterprise, Leadership &amp; Maritime Innovation Hub_files/projects.jpg" alt="Young people working together on community projects">
 </div>  
 
     <p class="section-label">IDEAS FOR ACTION</p>
@@ -280,20 +280,10 @@
         <form id="registrationForm">
 
             <label for="name">Full Name:</label>
-            <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your full name"
-            >
+            <input type="text" id="name" name="name" placeholder="Enter your full name">
 
             <label for="email">Email Address:</label>
-            <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your email address"
-            >
+            <input type="email" id="email" name="email" placeholder="Enter your email address">
 
             <label for="area">Area of Interest:</label>
 
@@ -371,7 +361,7 @@
     <!-- Footer -->
     <footer>
         <p>
-            © 2026 Coast Youth Enterprise, Leadership & Maritime Innovation Hub
+            © 2026 Coast Youth Enterprise, Leadership &amp; Maritime Innovation Hub
         </p>
 
         <p>
@@ -379,7 +369,45 @@
         </p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="./Coast Youth Enterprise, Leadership &amp; Maritime Innovation Hub_files/script.js.download"></script>
 
-</body>
-</html>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
